@@ -22,10 +22,10 @@ namespace EQEmu_Patcher
          *  EDIT THESE VARIABLES FOR EACH SERVER
          * 
          ****/
-        public static string serverName = "Rebuild EQ";
-        public static string filelistUrl = "https://patch.clumsysworld.com/";
+        public static string serverName = "Project VZTZ";
+        public static string filelistUrl = "https://eqemu.vztz.org/";
         public static bool defaultAutoPlay = false; //When a user runs this first time, what should Autoplay be set to?
-        public static bool defaultAutoPatch = false; //When a user runs this first time, what should Autopatch be set to?
+        public static bool defaultAutoPatch = true; //When a user runs this first time, what should Autopatch be set to?
 
         //Note that for supported versions, the 3 letter suffix is needed on the filelist_###.yml file.
         public static List<VersionTypes> supportedClients = new List<VersionTypes> { //Supported clients for patcher
