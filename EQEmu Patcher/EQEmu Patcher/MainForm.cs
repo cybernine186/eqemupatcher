@@ -23,7 +23,7 @@ namespace EQEmu_Patcher
          * 
          ****/
         public static string serverName = "Project VZTZ";
-        public static string filelistUrl = "https://eqemu.vztz.org/";
+        public static string filelistUrl = "http://patcher.vztz.org/";
         public static bool defaultAutoPlay = false; //When a user runs this first time, what should Autoplay be set to?
         public static bool defaultAutoPatch = true; //When a user runs this first time, what should Autopatch be set to?
 
@@ -268,7 +268,7 @@ namespace EQEmu_Patcher
                 {
                     if (MessageBox.Show("Unable to recognize the Everquest client in this directory, open a web page to report to devs?", "Visit", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
                     {
-                        System.Diagnostics.Process.Start("https://github.com/Xackery/eqemupatcher/issues/new?title=A+New+EQClient+Found&body=Hi+I+Found+A+New+Client!+Hash:+" + hash);
+                        //System.Diagnostics.Process.Start("https://github.com/Xackery/eqemupatcher/issues/new?title=A+New+EQClient+Found&body=Hi+I+Found+A+New+Client!+Hash:+" + hash);
                     }
                     txtList.Text = "Unable to recognize the Everquest client in this directory, send to developers: " + hash;
                 }
@@ -481,7 +481,7 @@ namespace EQEmu_Patcher
                     //Console.WriteLine("Downloading: "+ entry.name);
                     filesToDownload.Add(entry);
                     if (entry.size < 1) totalBytes += 1;
-                    else totalBytes += entry.size;
+                    else totalBytes += (entry.size / 1024);
                 }
                 else
                 {
@@ -492,7 +492,7 @@ namespace EQEmu_Patcher
                         Console.WriteLine(entry.name + ": " + md5 + " vs " + entry.md5);
                         filesToDownload.Add(entry);
                         if (entry.size < 1) totalBytes += 1;
-                        else totalBytes += entry.size;
+                        else totalBytes += (entry.size / 1024);
                     }
                 }
                 Application.DoEvents();
@@ -541,7 +541,7 @@ namespace EQEmu_Patcher
                 progressBar.Value = (curBytes > totalBytes) ? totalBytes : curBytes;
                 string url = filelist.downloadprefix + entry.name.Replace("\\", "/");
                 DownloadFile(url, entry.name);
-                curBytes += entry.size;
+                curBytes += (entry.size / 1024);
                 Application.DoEvents();
                 if (!isPatching)
                 {

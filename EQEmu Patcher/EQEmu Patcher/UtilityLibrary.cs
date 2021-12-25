@@ -15,7 +15,6 @@ namespace EQEmu_Patcher
         //Download a file to current directory
         public static string DownloadFile(string url, string outFile)
         {
-
             try
             {
                 using (var client = new WebClient())
