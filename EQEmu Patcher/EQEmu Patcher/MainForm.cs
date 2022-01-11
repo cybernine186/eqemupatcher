@@ -135,7 +135,8 @@ namespace EQEmu_Patcher
                 // btnStart.Enabled = false; // this is a cached value
                btnCheck.BackColor = Color.Red;
             } else
-            {                
+            {
+                btnStart.Enabled = true;
                 if ( IniLibrary.instance.AutoPlay.ToLower() == "true") PlayGame();
             }
             chkAutoPlay.Checked = (IniLibrary.instance.AutoPlay == "true");
