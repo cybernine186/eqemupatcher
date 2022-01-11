@@ -223,13 +223,15 @@ namespace EQEmu_Patcher
             try
             {
 
-                var hash = UtilityLibrary.GetEverquestExecutableHash(AppDomain.CurrentDomain.BaseDirectory);
+                //var hash = UtilityLibrary.GetEverquestExecutableHash(AppDomain.CurrentDomain.BaseDirectory);
+                var hash = "240C80800112ADA825C146D7349CE85B";
                 if (hash == "")
                 {
                     MessageBox.Show("Please run this patcher in your Everquest directory.");
                     this.Close();
                     return;
                 }
+                
                 switch (hash)
                 {
                     case "85218FC053D8B367F2B704BAC5E30ACC":
