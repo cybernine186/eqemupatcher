@@ -47,10 +47,26 @@ namespace EQEmu_Patcher
 
         VersionTypes currentVersion;
 
-       // TaskbarItemInfo tii = new TaskbarItemInfo();
+        // TaskbarItemInfo tii = new TaskbarItemInfo();
         public MainForm()
         {
             InitializeComponent();
+
+            Directory.SetCurrentDirectory(Application.StartupPath); // .exe folder instead of system32
+
+            if (!File.Exists("eqgame.exe"))
+            {
+                String message = "Place the patcher in a NEW and EMPTY folder before running.\r\n\r\n";
+                message += "EverQuest files (thousands of them) will be downloaded to the following folder:\r\n\r\n";
+                message += Environment.CurrentDirectory + "\r\n\r\n";
+                message += "Do you wish to proceed?";
+                DialogResult dr = MessageBox.Show(message, "VZTZ Fresh Install (eqgame.exe not found)", MessageBoxButtons.YesNo);
+
+                if (dr != DialogResult.Yes)
+                {
+                    Environment.Exit(0);
+                }
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -135,7 +151,7 @@ namespace EQEmu_Patcher
                 // btnStart.Enabled = false; // this is a cached value
                btnCheck.BackColor = Color.Red;
             } else
-            {
+            {                
                 btnStart.Enabled = true;
                 if ( IniLibrary.instance.AutoPlay.ToLower() == "true") PlayGame();
             }
