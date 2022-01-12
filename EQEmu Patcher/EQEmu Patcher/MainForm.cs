@@ -132,9 +132,11 @@ namespace EQEmu_Patcher
             if (filelist.version != IniLibrary.instance.LastPatchedVersion)
             {
                 isNeedingPatch = true;
+                // btnStart.Enabled = false; // this is a cached value
                btnCheck.BackColor = Color.Red;
             } else
-            {                
+            {
+                btnStart.Enabled = true;
                 if ( IniLibrary.instance.AutoPlay.ToLower() == "true") PlayGame();
             }
             chkAutoPlay.Checked = (IniLibrary.instance.AutoPlay == "true");
@@ -460,7 +462,9 @@ namespace EQEmu_Patcher
             isPatching = true;
             btnCheck.Text = "Cancel";
 
-            txtList.Text = "Patching...";
+            LogEvent("Patching..."); // change hides splash logo and shows text list
+            txtList.Refresh();
+
             FileList filelist;
 
             using (var input = File.OpenText("filelist.yml"))
@@ -473,10 +477,16 @@ namespace EQEmu_Patcher
             }
             int totalBytes = 0;
             List<FileEntry> filesToDownload = new List<FileEntry>();
+            int current_count = 0;
             foreach (var entry in filelist.downloads)
             {
                 Application.DoEvents();
+                ++current_count;
                 var path = entry.name.Replace("/", "\\");
+                if (current_count % 1000 == 0 || current_count == 1 || current_count == filelist.downloads.Count)
+                {
+                    LogEvent("Initial check of local files (" + current_count + "/" + filelist.downloads.Count + ")..."); // no need to Refresh buffer
+                }
                 //See if file exists.
                 if (!File.Exists(path))
                 {
@@ -525,6 +535,7 @@ namespace EQEmu_Patcher
 
             if (filesToDownload.Count == 0)
             {
+                btnStart.Enabled = true;
                 LogEvent("Up to date with patch "+filelist.version+".");
                 progressBar.Maximum = progressBar.Value = 1;
                 IniLibrary.instance.LastPatchedVersion = filelist.version;
@@ -552,6 +563,7 @@ namespace EQEmu_Patcher
                 }
             }
             progressBar.Value = progressBar.Maximum;
+            btnStart.Enabled = true;
             LogEvent("Complete! Press Play to begin.");
             IniLibrary.instance.LastPatchedVersion = filelist.version;
             IniLibrary.Save();
