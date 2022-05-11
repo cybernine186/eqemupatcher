@@ -67,6 +67,12 @@ namespace EQEmu_Patcher
                     Environment.Exit(0);
                 }
             }
+
+            if (Application.StartupPath.ToLower().Contains("system32"))
+            {
+                MessageBox.Show("Blocking downloads into System32, run patcher directly, not from Windows search.", "VZTZ Patcher");
+                Environment.Exit(0);
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -538,7 +544,7 @@ namespace EQEmu_Patcher
                     if (File.Exists(entry.name))
                     {
                         LogEvent("Deleting " + entry.name + "...");
-                        File.Delete(entry.name);
+                        File.Delete(Application.StartupPath + "\\" + entry.name);
                     }
                     Application.DoEvents();
                     if (!isPatching)
