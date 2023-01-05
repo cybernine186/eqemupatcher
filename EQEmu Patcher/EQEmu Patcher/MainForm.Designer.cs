@@ -56,7 +56,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtList.BackColor = System.Drawing.Color.Black;
-            this.txtList.ForeColor = System.Drawing.Color.Black;
+            this.txtList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtList.HideSelection = false;
             this.txtList.Location = new System.Drawing.Point(10, 6);
             this.txtList.Multiline = true;
@@ -70,8 +70,6 @@
             // 
             this.btnStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnStart.Enabled = false;
-            this.txtList.BackColor = System.Drawing.Color.Black;
-            this.txtList.ForeColor = System.Drawing.Color.Black;
             this.btnStart.Location = new System.Drawing.Point(315, 463);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(95, 52);
@@ -97,7 +95,7 @@
             // btnCheck
             // 
             this.btnCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCheck.ForeColor = System.Drawing.Color.Black;
+            this.btnCheck.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnCheck.Location = new System.Drawing.Point(12, 463);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(95, 52);
