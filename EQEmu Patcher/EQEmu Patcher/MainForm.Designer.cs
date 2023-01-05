@@ -43,6 +43,8 @@
             // 
             this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBar.BackColor = System.Drawing.Color.Black;
+            this.progressBar.ForeColor = System.Drawing.Color.Black;
             this.progressBar.Location = new System.Drawing.Point(10, 521);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(400, 39);
@@ -53,6 +55,8 @@
             this.txtList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtList.BackColor = System.Drawing.Color.Black;
+            this.txtList.ForeColor = System.Drawing.Color.Black;
             this.txtList.HideSelection = false;
             this.txtList.Location = new System.Drawing.Point(10, 6);
             this.txtList.Multiline = true;
@@ -66,6 +70,8 @@
             // 
             this.btnStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnStart.Enabled = false;
+            this.txtList.BackColor = System.Drawing.Color.Black;
+            this.txtList.ForeColor = System.Drawing.Color.Black;
             this.btnStart.Location = new System.Drawing.Point(315, 463);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(95, 52);
@@ -91,6 +97,7 @@
             // btnCheck
             // 
             this.btnCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCheck.ForeColor = System.Drawing.Color.Black;
             this.btnCheck.Location = new System.Drawing.Point(12, 463);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(95, 52);
@@ -102,6 +109,7 @@
             // chkAutoPlay
             // 
             this.chkAutoPlay.AutoSize = true;
+            this.chkAutoPlay.ForeColor = System.Drawing.Color.White;
             this.chkAutoPlay.Location = new System.Drawing.Point(238, 463);
             this.chkAutoPlay.Name = "chkAutoPlay";
             this.chkAutoPlay.Size = new System.Drawing.Size(71, 17);
@@ -113,6 +121,7 @@
             // chkAutoPatch
             // 
             this.chkAutoPatch.AutoSize = true;
+            this.chkAutoPatch.ForeColor = System.Drawing.Color.White;
             this.chkAutoPatch.Location = new System.Drawing.Point(113, 463);
             this.chkAutoPatch.Name = "chkAutoPatch";
             this.chkAutoPatch.Size = new System.Drawing.Size(79, 17);
@@ -125,6 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(416, 572);
             this.Controls.Add(this.chkAutoPatch);
             this.Controls.Add(this.chkAutoPlay);
