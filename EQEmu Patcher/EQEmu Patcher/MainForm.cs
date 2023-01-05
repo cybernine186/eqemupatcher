@@ -22,8 +22,8 @@ namespace EQEmu_Patcher
          *  EDIT THESE VARIABLES FOR EACH SERVER
          * 
          ****/
-        public static string serverName = "Project VZTZ";
-        public static string filelistUrl = "http://patcher.vztz.org/";
+        public static string serverName = "Rise of Zek";
+        public static string filelistUrl = "http://eqemu.rozpvp.com/";
         public static bool defaultAutoPlay = false; //When a user runs this first time, what should Autoplay be set to?
         public static bool defaultAutoPatch = true; //When a user runs this first time, what should Autopatch be set to?
 
@@ -34,7 +34,7 @@ namespace EQEmu_Patcher
             //VersionTypes.Underfoot, //und
             //VersionTypes.Secrets_Of_Feydwer, //sof
             //VersionTypes.Seeds_Of_Destruction, //sod
-            VersionTypes.Rain_Of_Fear, //rof
+            //VersionTypes.Rain_Of_Fear, //rof
             VersionTypes.Rain_Of_Fear_2 //rof
             //VersionTypes.Broken_Mirror, //bro
         }; 
@@ -60,7 +60,7 @@ namespace EQEmu_Patcher
                 message += "EverQuest files (thousands of them) will be downloaded to the following folder:\r\n\r\n";
                 message += Environment.CurrentDirectory + "\r\n\r\n";
                 message += "Do you wish to proceed?";
-                DialogResult dr = MessageBox.Show(message, "VZTZ Fresh Install (eqgame.exe not found)", MessageBoxButtons.YesNo);
+                DialogResult dr = MessageBox.Show(message, "RoZ Fresh Install (eqgame.exe not found)", MessageBoxButtons.YesNo);
 
                 if (dr != DialogResult.Yes)
                 {
@@ -70,7 +70,7 @@ namespace EQEmu_Patcher
 
             if (Application.StartupPath.ToLower().Contains("system32"))
             {
-                MessageBox.Show("Blocking downloads into System32, run patcher directly, not from Windows search.", "VZTZ Patcher");
+                MessageBox.Show("Blocking downloads into System32, run patcher directly, not from Windows search.", "RoZ Patcher");
                 Environment.Exit(0);
             }
         }
@@ -318,13 +318,13 @@ namespace EQEmu_Patcher
         private void buildClientVersions()
         {
             clientVersions.Clear();
-            clientVersions.Add(VersionTypes.Titanium, new ClientVersion("Titanium", "titanium"));
-            clientVersions.Add(VersionTypes.Secrets_Of_Feydwer, new ClientVersion("Secrets Of Feydwer", "sof"));
-            clientVersions.Add(VersionTypes.Seeds_Of_Destruction, new ClientVersion("Seeds of Destruction", "sod"));
-            clientVersions.Add(VersionTypes.Rain_Of_Fear, new ClientVersion("Rain of Fear", "rof"));
+            //clientVersions.Add(VersionTypes.Titanium, new ClientVersion("Titanium", "titanium"));
+            //clientVersions.Add(VersionTypes.Secrets_Of_Feydwer, new ClientVersion("Secrets Of Feydwer", "sof"));
+            //clientVersions.Add(VersionTypes.Seeds_Of_Destruction, new ClientVersion("Seeds of Destruction", "sod"));
+            //clientVersions.Add(VersionTypes.Rain_Of_Fear, new ClientVersion("Rain of Fear", "rof"));
             clientVersions.Add(VersionTypes.Rain_Of_Fear_2, new ClientVersion("Rain of Fear 2", "rof2"));
-            clientVersions.Add(VersionTypes.Underfoot, new ClientVersion("Underfoot", "underfoot"));
-            clientVersions.Add(VersionTypes.Broken_Mirror, new ClientVersion("Broken Mirror", "brokenmirror"));
+            //clientVersions.Add(VersionTypes.Underfoot, new ClientVersion("Underfoot", "underfoot"));
+            //clientVersions.Add(VersionTypes.Broken_Mirror, new ClientVersion("Broken Mirror", "brokenmirror"));
         }
 
         private int getFileCount(System.IO.DirectoryInfo root) {
