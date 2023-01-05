@@ -22,8 +22,8 @@ namespace EQEmu_Patcher
          *  EDIT THESE VARIABLES FOR EACH SERVER
          * 
          ****/
-        public static string serverName = "Project VZTZ";
-        public static string filelistUrl = "http://patcher.vztz.org/";
+        public static string serverName = "A EQ PVP [Classic-Luclin] PoP later";
+        public static string filelistUrl = "http://174.84.65.219/";
         public static bool defaultAutoPlay = false; //When a user runs this first time, what should Autoplay be set to?
         public static bool defaultAutoPatch = true; //When a user runs this first time, what should Autopatch be set to?
 
@@ -60,7 +60,7 @@ namespace EQEmu_Patcher
                 message += "EverQuest files (thousands of them) will be downloaded to the following folder:\r\n\r\n";
                 message += Environment.CurrentDirectory + "\r\n\r\n";
                 message += "Do you wish to proceed?";
-                DialogResult dr = MessageBox.Show(message, "VZTZ Fresh Install (eqgame.exe not found)", MessageBoxButtons.YesNo);
+                DialogResult dr = MessageBox.Show(message, "Fresh Install (eqgame.exe not found)", MessageBoxButtons.YesNo);
 
                 if (dr != DialogResult.Yes)
                 {
@@ -70,7 +70,7 @@ namespace EQEmu_Patcher
 
             if (Application.StartupPath.ToLower().Contains("system32"))
             {
-                MessageBox.Show("Blocking downloads into System32, run patcher directly, not from Windows search.", "VZTZ Patcher");
+                MessageBox.Show("Blocking downloads into System32, run patcher directly, not from Windows search.", "A EQ PVP Patcher");
                 Environment.Exit(0);
             }
         }
