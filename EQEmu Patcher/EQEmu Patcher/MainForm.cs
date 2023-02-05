@@ -23,7 +23,7 @@ namespace EQEmu_Patcher
          * 
          ****/
         public static string serverName = "A EQ PVP [Classic-Luclin] PoP later";
-        public static string filelistUrl = "http://174.84.65.219/";
+        public static string filelistUrl = "http://eqemu.aeqpvp.com/";
         public static bool defaultAutoPlay = false; //When a user runs this first time, what should Autoplay be set to?
         public static bool defaultAutoPatch = true; //When a user runs this first time, what should Autopatch be set to?
 
